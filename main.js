@@ -4,10 +4,11 @@ var htmlEl = document.documentElement;
 htmlEl.classList.add('js');
 
 // Eingangs-Zustand aktivieren (Hero als Vorhang) — Deep-Links (#anker) überspringen ihn
+// Deaktiviert: blockierte kurz das Scrollen beim ersten Aufruf ("hängt")
 (function () {
   var hero = document.querySelector('.hero');
   var chip = document.getElementById('gate-open');
-  if (hero && chip && !location.hash) {
+  if (hero && chip && !location.hash && false) {
     htmlEl.classList.add('gate');
   }
 })();

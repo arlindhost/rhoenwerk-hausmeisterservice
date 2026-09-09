@@ -124,6 +124,20 @@ scheduleFX(function () {
   });
 });
 
+// Hero-Hintergrund-Blobs pausieren, sobald der Hero nicht mehr sichtbar ist
+// (spart Rechenleistung beim Scrollen, keine sichtbare Änderung im Hero selbst)
+(function () {
+  var hero = document.querySelector('.hero');
+  var bg = document.querySelector('.hero-bg');
+  if (!hero || !bg || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      bg.classList.toggle('is-paused', !entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+  io.observe(hero);
+})();
+
 // Header: Logo-Farbe an der tatsächlichen Hero-Unterkante wechseln
 var updateHeader = (function () {
   var header = document.querySelector('.site-header');

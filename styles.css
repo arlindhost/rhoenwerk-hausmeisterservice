@@ -328,15 +328,18 @@ body.nav-open { overflow: hidden; }
 .hero-bg .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(55px);
   opacity: 0.85;
   will-change: transform;
+  transform: translateZ(0);
 }
 
-.hero-bg .b1 { width: 70vw; height: 70vw; left: -18vw; top: -28vw; background: #275c44; animation: drift1 26s ease-in-out infinite alternate; }
-.hero-bg .b2 { width: 60vw; height: 60vw; right: -20vw; top: 8vh; background: #8fb996; animation: drift2 32s ease-in-out infinite alternate; }
-.hero-bg .b3 { width: 55vw; height: 55vw; left: 10vw; bottom: -30vh; background: #cfe3c4; opacity: 0.6; animation: drift3 38s ease-in-out infinite alternate; }
-.hero-bg .b4 { width: 40vw; height: 40vw; right: 6vw; bottom: -18vh; background: #0d1a14; opacity: 0.9; animation: drift1 30s ease-in-out infinite alternate-reverse; }
+.hero-bg .b1 { width: 56vw; height: 56vw; left: -18vw; top: -28vw; background: #275c44; animation: drift1 26s ease-in-out infinite alternate; }
+.hero-bg .b2 { width: 48vw; height: 48vw; right: -20vw; top: 8vh; background: #8fb996; animation: drift2 32s ease-in-out infinite alternate; }
+.hero-bg .b3 { width: 44vw; height: 44vw; left: 10vw; bottom: -30vh; background: #cfe3c4; opacity: 0.6; animation: drift3 38s ease-in-out infinite alternate; }
+.hero-bg .b4 { width: 32vw; height: 32vw; right: 6vw; bottom: -18vh; background: #0d1a14; opacity: 0.9; animation: drift1 30s ease-in-out infinite alternate-reverse; }
+
+.hero-bg.is-paused .blob { animation-play-state: paused; }
 
 @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(9vw, 7vh) scale(1.12); } }
 @keyframes drift2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-8vw, 10vh) scale(0.92); } }
